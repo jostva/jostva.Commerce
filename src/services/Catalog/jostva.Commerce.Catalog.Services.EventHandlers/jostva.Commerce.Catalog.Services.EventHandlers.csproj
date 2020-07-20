@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\jostva.Commerce.Catalog.Common\jostva.Commerce.Catalog.Common.csproj" />
+    <ProjectReference Include="..\jostva.Commerce.Catalog.Data\jostva.Commerce.Catalog.Data.csproj" />
+  </ItemGroup>
+
+</Project>

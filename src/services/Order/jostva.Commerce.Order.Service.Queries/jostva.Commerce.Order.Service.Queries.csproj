@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\jostva.Infrastructure.Mapping\jostva.Infrastructure.Mapping.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\jostva.Infrastructure.Paging\jostva.Infrastructure.Paging.csproj" />
+    <ProjectReference Include="..\jostva.Commerce.Order.Common\jostva.Commerce.Order.Common.csproj" />
+    <ProjectReference Include="..\jostva.Commerce.Order.Data\jostva.Commerce.Order.Data.csproj" />
+  </ItemGroup>
+
+</Project>
