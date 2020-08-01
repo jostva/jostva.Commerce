@@ -52,18 +52,14 @@ namespace jostva.Commerce.Order.Api
             services.AddHealthChecksUI();
 
             // Api Urls
-            services.Configure<ApiUrls>(
-                opts => Configuration.GetSection("ApiUrls").Bind(opts)
-            );
+            services.Configure<ApiUrls>(opts => Configuration.GetSection("ApiUrls").Bind(opts));
 
             // Azure Service Bus ConnectionString
-            services.Configure<AzureServiceBus>(
-                opts => Configuration.GetSection("AzureServiceBus").Bind(opts)
-            );
+            services.Configure<AzureServiceBus>(opts => Configuration.GetSection("AzureServiceBus").Bind(opts));
 
             // Proxies
-            services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
-            //services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
+            //services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
+            services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
 
             //  Event handlers
             services.AddMediatR(Assembly.Load("jostva.Commerce.Order.Service.EventHandlers"));

@@ -20,11 +20,11 @@ namespace jostva.Commerce.Order.Service.Proxies.Catalog
 
         public async Task UpdateStockAsync(ProductInStockUpdateStockCommand command)
         {
-            var queueClient = new QueueClient(connectionString, "order-stock-update");
+            QueueClient queueClient = new QueueClient(connectionString, "order-stock-update");
 
             // Serialize message
             string body = JsonSerializer.Serialize(command);
-            var message = new Message(Encoding.UTF8.GetBytes(body));
+            Message message = new Message(Encoding.UTF8.GetBytes(body));
 
             // Send the message to the queue
             await queueClient.SendAsync(message);

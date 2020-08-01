@@ -12,6 +12,7 @@ namespace jostva.Commerce.Order.Service.Proxies.Catalog
     {
         private const string MediaType = "application/json";
 
+
         private readonly HttpClient httpClient;
         private readonly ApiUrls apiUrls;
 
@@ -25,10 +26,9 @@ namespace jostva.Commerce.Order.Service.Proxies.Catalog
 
         public async Task UpdateStockAsync(ProductInStockUpdateStockCommand command)
         {
-            StringContent content = new StringContent(JsonSerializer.Serialize(command),
-                                                      Encoding.UTF8, MediaType);
+            StringContent content = new StringContent(JsonSerializer.Serialize(command), Encoding.UTF8, MediaType);
 
-            HttpResponseMessage request = await httpClient.PutAsync(apiUrls.CatalogUrl + "api/stocks", content);
+            HttpResponseMessage request = await httpClient.PutAsync(apiUrls.CatalogUrl + "api/ProductInStock", content);
             request.EnsureSuccessStatusCode();
         }
     }

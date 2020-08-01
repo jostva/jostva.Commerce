@@ -67,15 +67,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Models", "04. Models", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Testing", "05. Testing", "{AAE15B82-5BA3-4F60-87AE-BAFAC5DFF5E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Customer.Domain", "src\services\Customer\jostva.Commerce.Customer.Domain\jostva.Commerce.Customer.Domain.csproj", "{0B21C9B1-E211-4695-8EFA-B1C630E9E53E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Customer.Domain", "src\services\Customer\jostva.Commerce.Customer.Domain\jostva.Commerce.Customer.Domain.csproj", "{0B21C9B1-E211-4695-8EFA-B1C630E9E53E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Customer.Data", "src\services\Customer\jostva.Commerce.Customer.Data\jostva.Commerce.Customer.Data.csproj", "{80110BED-C1DB-4FC3-9F88-5508941C01DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Customer.Data", "src\services\Customer\jostva.Commerce.Customer.Data\jostva.Commerce.Customer.Data.csproj", "{80110BED-C1DB-4FC3-9F88-5508941C01DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Customer.Service.EventHandlers", "src\services\Customer\jostva.Commerce.Customer.EventHandlers\jostva.Commerce.Customer.Service.EventHandlers.csproj", "{BCB6BD57-A91D-4443-9BD4-2EA72F5BE328}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Customer.Service.EventHandlers", "src\services\Customer\jostva.Commerce.Customer.EventHandlers\jostva.Commerce.Customer.Service.EventHandlers.csproj", "{BCB6BD57-A91D-4443-9BD4-2EA72F5BE328}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Customer.Service.Queries", "src\services\Customer\jostva.Commerce.Customer.Queries\jostva.Commerce.Customer.Service.Queries.csproj", "{8B728EC2-1094-4201-ABBA-FEC89132C542}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Customer.Service.Queries", "src\services\Customer\jostva.Commerce.Customer.Queries\jostva.Commerce.Customer.Service.Queries.csproj", "{8B728EC2-1094-4201-ABBA-FEC89132C542}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Customer.Api", "src\services\Customer\jostva.Commerce.Customer.Api\jostva.Commerce.Customer.Api.csproj", "{CE51C580-37B7-494D-926A-D94C8DD6876B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Customer.Api", "src\services\Customer\jostva.Commerce.Customer.Api\jostva.Commerce.Customer.Api.csproj", "{CE51C580-37B7-494D-926A-D94C8DD6876B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{6DA6EA07-48A6-48C7-8A50-6832936F0794}"
 EndProject
@@ -89,19 +89,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Common", "05. Common", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06. Testing", "06. Testing", "{80BD0CFA-5C91-4A14-AAD1-E8F5E88DDE5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Common", "src\services\Order\jostva.Commerce.Order.Common\jostva.Commerce.Order.Common.csproj", "{F182D813-8291-4F13-88ED-33E03B1FC9BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Common", "src\services\Order\jostva.Commerce.Order.Common\jostva.Commerce.Order.Common.csproj", "{F182D813-8291-4F13-88ED-33E03B1FC9BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Domain", "src\services\Order\jostva.Commerce.Order.Domain\jostva.Commerce.Order.Domain.csproj", "{B942BB8B-CFCF-42A0-B0A9-9B3EA97A7984}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Domain", "src\services\Order\jostva.Commerce.Order.Domain\jostva.Commerce.Order.Domain.csproj", "{B942BB8B-CFCF-42A0-B0A9-9B3EA97A7984}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Data", "src\services\Order\jostva.Commerce.Order.Data\jostva.Commerce.Order.Data.csproj", "{4840A80E-23D7-47C9-B4A5-460425AB362E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Data", "src\services\Order\jostva.Commerce.Order.Data\jostva.Commerce.Order.Data.csproj", "{4840A80E-23D7-47C9-B4A5-460425AB362E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Service.EventHandlers", "src\services\Order\jostva.Commerce.Order.Service.EventHandlers\jostva.Commerce.Order.Service.EventHandlers.csproj", "{A2E3D116-6798-4103-BC4F-9283333DAD4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Service.EventHandlers", "src\services\Order\jostva.Commerce.Order.Service.EventHandlers\jostva.Commerce.Order.Service.EventHandlers.csproj", "{A2E3D116-6798-4103-BC4F-9283333DAD4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Service.Queries", "src\services\Order\jostva.Commerce.Order.Service.Queries\jostva.Commerce.Order.Service.Queries.csproj", "{93DDA5B1-F860-48C7-85B1-36FA9D60BC23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Service.Queries", "src\services\Order\jostva.Commerce.Order.Service.Queries\jostva.Commerce.Order.Service.Queries.csproj", "{93DDA5B1-F860-48C7-85B1-36FA9D60BC23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Service.Proxies", "src\services\Order\jostva.Commerce.Order.Service.Proxies\jostva.Commerce.Order.Service.Proxies.csproj", "{676F548F-11F8-44EF-B16B-DBC3D71B5D62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Service.Proxies", "src\services\Order\jostva.Commerce.Order.Service.Proxies\jostva.Commerce.Order.Service.Proxies.csproj", "{676F548F-11F8-44EF-B16B-DBC3D71B5D62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Order.Api", "src\services\Order\jostva.Commerce.Order.Api\jostva.Commerce.Order.Api.csproj", "{954B1057-1A33-424A-B9D9-839DE24EBE85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Api", "src\services\Order\jostva.Commerce.Order.Api\jostva.Commerce.Order.Api.csproj", "{954B1057-1A33-424A-B9D9-839DE24EBE85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Listeners", "07. Listeners", "{903CD4CD-3FE4-4706-BBF2-D9680DE2DAE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Catalog.Listener", "src\services\Catalog\jostva.Commerce.Catalog.Listener\jostva.Commerce.Catalog.Listener.csproj", "{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -205,6 +209,10 @@ Global
 		{954B1057-1A33-424A-B9D9-839DE24EBE85}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954B1057-1A33-424A-B9D9-839DE24EBE85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954B1057-1A33-424A-B9D9-839DE24EBE85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -256,6 +264,8 @@ Global
 		{93DDA5B1-F860-48C7-85B1-36FA9D60BC23} = {39B8BE55-EEDF-43DC-B97D-42E689EAFC1E}
 		{676F548F-11F8-44EF-B16B-DBC3D71B5D62} = {39B8BE55-EEDF-43DC-B97D-42E689EAFC1E}
 		{954B1057-1A33-424A-B9D9-839DE24EBE85} = {6DA6EA07-48A6-48C7-8A50-6832936F0794}
+		{903CD4CD-3FE4-4706-BBF2-D9680DE2DAE2} = {D2F61393-4660-40A4-9C5B-CFDD27EB32D6}
+		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC} = {903CD4CD-3FE4-4706-BBF2-D9680DE2DAE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2DE560C-E097-414C-BE08-628DB7C68E16}
