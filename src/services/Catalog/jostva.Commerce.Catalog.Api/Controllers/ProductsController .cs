@@ -5,6 +5,8 @@ using jostva.Commerce.Catalog.Services.Queries.DTOs;
 using jostva.Commerce.Catalog.Services.Queries.Interfaces;
 using jostva.Infrastructure.Collection;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace jostva.Commerce.Catalog.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase

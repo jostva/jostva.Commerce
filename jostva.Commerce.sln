@@ -105,7 +105,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Order.Api",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07. Listeners", "07. Listeners", "{903CD4CD-3FE4-4706-BBF2-D9680DE2DAE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Catalog.Listener", "src\services\Catalog\jostva.Commerce.Catalog.Listener\jostva.Commerce.Catalog.Listener.csproj", "{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Catalog.Listener", "src\services\Catalog\jostva.Commerce.Catalog.Listener\jostva.Commerce.Catalog.Listener.csproj", "{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{6307E8A9-9FC9-4455-9A49-857DACC2E17C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Services", "02. Services", "{36C5E87D-49F8-4312-8CC8-C9A05FF2FC96}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Persistence", "03. Persistence", "{2C7C252D-1E54-4B52-968D-4E37C575C483}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Models", "04. Models", "{F0525C09-BD95-4D79-A5F4-3E233A6397AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Testing", "05. Testing", "{A1A70493-8F09-45FB-8EDB-117AD48EB593}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Identity.Domain", "src\services\Identity\jostva.Commerce.Identity.Domain\jostva.Commerce.Identity.Domain.csproj", "{F37543AD-221E-4A68-BB08-5F4DD048BCAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Identity.Data", "src\services\Identity\jostva.Commerce.Identity.Data\jostva.Commerce.Identity.Data.csproj", "{7B8EF5BE-6DC0-49DD-9C33-2B967FE620F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jostva.Commerce.Identity.Api", "src\services\Identity\jostva.Commerce.Identity.Api\jostva.Commerce.Identity.Api.csproj", "{369D5DE9-8272-4B49-8AAB-0698B9CC9B1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Identity.Services.EventHandlers", "src\services\Identity\jostva.Commerce.Identity.Services.EventHandlers\jostva.Commerce.Identity.Services.EventHandlers.csproj", "{04DE2121-00EF-47F6-9C5A-58A02D5381F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jostva.Commerce.Identity.Services.Queries", "src\services\Identity\jostva.Commerce.Identity.Services.Queries\jostva.Commerce.Identity.Services.Queries.csproj", "{FF3D6A77-9AB9-4853-8C6E-03772016903E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -213,6 +233,26 @@ Global
 		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37543AD-221E-4A68-BB08-5F4DD048BCAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37543AD-221E-4A68-BB08-5F4DD048BCAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37543AD-221E-4A68-BB08-5F4DD048BCAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37543AD-221E-4A68-BB08-5F4DD048BCAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B8EF5BE-6DC0-49DD-9C33-2B967FE620F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B8EF5BE-6DC0-49DD-9C33-2B967FE620F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B8EF5BE-6DC0-49DD-9C33-2B967FE620F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B8EF5BE-6DC0-49DD-9C33-2B967FE620F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{369D5DE9-8272-4B49-8AAB-0698B9CC9B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{369D5DE9-8272-4B49-8AAB-0698B9CC9B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{369D5DE9-8272-4B49-8AAB-0698B9CC9B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{369D5DE9-8272-4B49-8AAB-0698B9CC9B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DE2121-00EF-47F6-9C5A-58A02D5381F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DE2121-00EF-47F6-9C5A-58A02D5381F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DE2121-00EF-47F6-9C5A-58A02D5381F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DE2121-00EF-47F6-9C5A-58A02D5381F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3D6A77-9AB9-4853-8C6E-03772016903E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3D6A77-9AB9-4853-8C6E-03772016903E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3D6A77-9AB9-4853-8C6E-03772016903E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3D6A77-9AB9-4853-8C6E-03772016903E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -266,6 +306,16 @@ Global
 		{954B1057-1A33-424A-B9D9-839DE24EBE85} = {6DA6EA07-48A6-48C7-8A50-6832936F0794}
 		{903CD4CD-3FE4-4706-BBF2-D9680DE2DAE2} = {D2F61393-4660-40A4-9C5B-CFDD27EB32D6}
 		{C50DDCC7-9E2E-479C-9BD8-E4C1597578BC} = {903CD4CD-3FE4-4706-BBF2-D9680DE2DAE2}
+		{6307E8A9-9FC9-4455-9A49-857DACC2E17C} = {0ED47EF1-EDFB-4DED-AF4E-EC349CDE4AAA}
+		{36C5E87D-49F8-4312-8CC8-C9A05FF2FC96} = {0ED47EF1-EDFB-4DED-AF4E-EC349CDE4AAA}
+		{2C7C252D-1E54-4B52-968D-4E37C575C483} = {0ED47EF1-EDFB-4DED-AF4E-EC349CDE4AAA}
+		{F0525C09-BD95-4D79-A5F4-3E233A6397AC} = {0ED47EF1-EDFB-4DED-AF4E-EC349CDE4AAA}
+		{A1A70493-8F09-45FB-8EDB-117AD48EB593} = {0ED47EF1-EDFB-4DED-AF4E-EC349CDE4AAA}
+		{F37543AD-221E-4A68-BB08-5F4DD048BCAE} = {F0525C09-BD95-4D79-A5F4-3E233A6397AC}
+		{7B8EF5BE-6DC0-49DD-9C33-2B967FE620F7} = {2C7C252D-1E54-4B52-968D-4E37C575C483}
+		{369D5DE9-8272-4B49-8AAB-0698B9CC9B1C} = {6307E8A9-9FC9-4455-9A49-857DACC2E17C}
+		{04DE2121-00EF-47F6-9C5A-58A02D5381F4} = {36C5E87D-49F8-4312-8CC8-C9A05FF2FC96}
+		{FF3D6A77-9AB9-4853-8C6E-03772016903E} = {36C5E87D-49F8-4312-8CC8-C9A05FF2FC96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A2DE560C-E097-414C-BE08-628DB7C68E16}

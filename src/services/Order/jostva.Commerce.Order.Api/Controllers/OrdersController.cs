@@ -3,12 +3,15 @@ using jostva.Commerce.Order.Service.Queries.DTOs;
 using jostva.Commerce.Order.Service.Queries.Interfaces;
 using jostva.Infrastructure.Collection;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
 namespace jostva.Commerce.Order.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class OrdersController : ControllerBase

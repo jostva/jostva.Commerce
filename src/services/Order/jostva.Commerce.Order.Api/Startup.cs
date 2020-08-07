@@ -9,6 +9,7 @@ using jostva.Commerce.Order.Service.Queries;
 using jostva.Commerce.Order.Service.Queries.Interfaces;
 using jostva.Infrastructure.Logging;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -18,7 +19,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
+using System.Text;
 
 #endregion
 
@@ -36,7 +39,10 @@ namespace jostva.Commerce.Order.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //  HttpContextAccessor
+            services.AddHttpContextAccessor();
 
+            //  Db Context
             services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(
                         Configuration.GetConnectionString("DefaultConnection"),
@@ -58,8 +64,8 @@ namespace jostva.Commerce.Order.Api
             services.Configure<AzureServiceBus>(opts => Configuration.GetSection("AzureServiceBus").Bind(opts));
 
             // Proxies
-            //services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
-            services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
+            services.AddHttpClient<ICatalogProxy, CatalogHttpProxy>();
+            //services.AddTransient<ICatalogProxy, CatalogQueueProxy>();
 
             //  Event handlers
             services.AddMediatR(Assembly.Load("jostva.Commerce.Order.Service.EventHandlers"));
@@ -69,6 +75,24 @@ namespace jostva.Commerce.Order.Api
 
             // API Controllers
             services.AddControllers();
+
+            // Add Authentication
+            var secretKey = Encoding.ASCII.GetBytes(
+                Configuration.GetValue<string>("SecretKey")
+            );
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(secretKey),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
         }
 
 
@@ -91,6 +115,7 @@ namespace jostva.Commerce.Order.Api
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {

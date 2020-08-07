@@ -1,15 +1,15 @@
-#region usings
-
 using HealthChecks.UI.Client;
-using jostva.Commerce.Catalog.Data;
-using jostva.Commerce.Catalog.Services.Queries;
-using jostva.Commerce.Catalog.Services.Queries.Interfaces;
+using jostva.Commerce.Identity.Data;
+using jostva.Commerce.Identity.Domain;
+using jostva.Commerce.Identity.Services.Queries;
+using jostva.Commerce.Identity.Services.Queries.Interfaces;
 using jostva.Infrastructure.Logging;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,9 +20,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Reflection;
 using System.Text;
 
-#endregion
-
-namespace jostva.Commerce.Catalog.Api
+namespace jostva.Commerce.Identity.Api
 {
     public class Startup
     {
@@ -33,31 +31,50 @@ namespace jostva.Commerce.Catalog.Api
 
         public IConfiguration Configuration { get; }
 
-
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDBContext>(options =>
+            // HttpContextAccessor
+            services.AddHttpContextAccessor();
+
+            // DbContext
+            services.AddDbContext<ApplicationDbContext>(options =>
                     options.UseSqlServer(
                         Configuration.GetConnectionString("DefaultConnection"),
-                        item => item.MigrationsHistoryTable("__EFMigrationsHistory", "Catalog")
-                    )
+                        x => x.MigrationsHistoryTable("__EFMigrationsHistory", "Identity")
+                )
             );
 
-            //  Heatlh Checks
+            // Health check
             services.AddHealthChecks()
-                    .AddCheck("self", () => HealthCheckResult.Healthy())
-                    .AddDbContextCheck<ApplicationDBContext>();
+                     .AddCheck("self", () => HealthCheckResult.Healthy())
+                     .AddDbContextCheck<ApplicationDbContext>(typeof(ApplicationDbContext).Name);
 
             services.AddHealthChecksUI();
 
-            //  Event handlers
-            services.AddMediatR(Assembly.Load("jostva.Commerce.Catalog.Services.EventHandlers"));
+            // Identity
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>()
+                    .AddDefaultTokenProviders();
 
-            //  Query services
-            services.AddTransient<IProductQueryService, ProductQueryService>();
-            services.AddTransient<IProductInStockQueryService, ProductInStockQueryService>();
+            // Identity configuration
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 1;
+            });
 
+            // Event handlers
+            services.AddMediatR(Assembly.Load("jostva.Commerce.Identity.Services.EventHandlers"));
+
+            // Query services
+            services.AddTransient<IUserQueryService, UserQueryService>();
+
+            // API Controllers
             services.AddControllers();
 
             // Add Authentication
@@ -90,7 +107,7 @@ namespace jostva.Commerce.Catalog.Api
             else
             {
                 loggerFactory.AddSyslog(
-                    Configuration.GetValue<string>("Papertrail:host"), 
+                    Configuration.GetValue<string>("Papertrail:host"),
                     Configuration.GetValue<int>("Papertrail:port"));
             }
 
@@ -103,14 +120,13 @@ namespace jostva.Commerce.Catalog.Api
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
                 {
                     Predicate = _ => true,
                     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
                 });
-
                 endpoints.MapHealthChecksUI();
-                endpoints.MapControllers();
             });
         }
     }

@@ -1,5 +1,6 @@
 ﻿using jostva.Commerce.Order.Service.Proxies.Catalog.Commands;
 using jostva.Commerce.Order.Service.Proxies.Catalog.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using System.Net.Http;
 using System.Text;
@@ -13,12 +14,14 @@ namespace jostva.Commerce.Order.Service.Proxies.Catalog
         private const string MediaType = "application/json";
 
 
-        private readonly HttpClient httpClient;
+        private readonly HttpClient httpClient; 
         private readonly ApiUrls apiUrls;
 
 
-        public CatalogHttpProxy(HttpClient httpClient, IOptions<ApiUrls> apiUrls)
+        public CatalogHttpProxy(HttpClient httpClient, IOptions<ApiUrls> apiUrls, IHttpContextAccessor httpContextAccessor)
         {
+            httpClient.AddBearerToken(httpContextAccessor);
+
             this.httpClient = httpClient;
             this.apiUrls = apiUrls.Value;
         }

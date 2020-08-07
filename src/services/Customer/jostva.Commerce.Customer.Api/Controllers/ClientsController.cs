@@ -5,6 +5,8 @@ using jostva.Commerce.Customer.Service.Queries.DTOs;
 using jostva.Commerce.Customer.Service.Queries.Interfaces;
 using jostva.Infrastructure.Collection;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace jostva.Commerce.Customer.Api.Controllers
 {
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [Route("api/[controller]")]
     [ApiController]
     public class ClientsController : ControllerBase
