@@ -79,7 +79,7 @@ namespace jostva.Commerce.Gateway.Proxies
                 "application/json"
             );
 
-            var request = await httpClient.PostAsync($"{apiUrls.OrderUrl}v1/orders", content);
+            var request = await httpClient.PostAsync($"{apiUrls.OrderUrl}api/orders", content);
             request.EnsureSuccessStatusCode();
         }
 

@@ -39,13 +39,16 @@ namespace jostva.Commerce.Identity.Services.EventHandlers
         {
             IdentityAccess result = new IdentityAccess();
 
-            ApplicationUser user = await context.Users.SingleAsync(x => x.Email == request.Email);
-            SignInResult response = await signInManager.CheckPasswordSignInAsync(user, request.Password, false);
-
-            if (response.Succeeded)
+            ApplicationUser user = await context.Users.SingleOrDefaultAsync(x => x.Email == request.Email);
+            if (user != null)
             {
-                result.Succeeded = true;
-                await GenerateToken(user, result);
+                SignInResult response = await signInManager.CheckPasswordSignInAsync(user, request.Password, false);
+                
+                if (response.Succeeded)
+                {
+                    result.Succeeded = true;
+                    await GenerateToken(user, result);
+                }
             }
 
             return result;

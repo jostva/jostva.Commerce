@@ -30,19 +30,14 @@ namespace jostva.Commerce.Identity.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(UserCreateCommand command)
         {
-            if (ModelState.IsValid)
+            IdentityResult result = await mediator.Send(command);
+
+            if (!result.Succeeded)
             {
-                IdentityResult result = await mediator.Send(command);
-
-                if (!result.Succeeded)
-                {
-                    return BadRequest(result.Errors);
-                }
-
-                return Ok();
+                return BadRequest(result.Errors);
             }
 
-            return BadRequest();
+            return Ok();
         }
 
 
